@@ -3,7 +3,7 @@ package com.syj.memo.user.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.syj.memo.common.EncrytUtils;
+import com.syj.memo.common.EncryptUtils;
 import com.syj.memo.user.repository.UserRepository;
 
 @Service
@@ -14,7 +14,7 @@ public class UserService {
 	
 	public int addUser(String loginId, String password, String name, String email) {
 		
-		String encryptPassword = EncrytUtils.md5(password);
+		String encryptPassword = EncryptUtils.md5(password);
 
 		return userRepository.insertUser(loginId, encryptPassword, name, email);
 	}

@@ -3,7 +3,7 @@ package com.syj.memo.common;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class EncrytUtils {
+public class EncryptUtils {
 	
 	// md5 암호화 기능
 	// 암호화 할 문자열은 전달 받고, 암호화 된 결과 문자열을 돌려준다.
