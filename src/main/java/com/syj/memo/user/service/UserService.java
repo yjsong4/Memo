@@ -14,7 +14,6 @@ public class UserService {
 	public int addUser(String loginId, String password, String name, String email) {
 
 		return userRepository.insertUser(loginId, password, name, email);
-
 	}
 
 }
