@@ -24,7 +24,7 @@ public class UserService {
 		
 		String encryptPassword = EncryptUtils.md5(password);
 		
-		return userRepository.selectUserByLoginIdAndPassword(loginId, password);
+		return userRepository.selectUserByLoginIdAndPassword(loginId, encryptPassword);
 	}
 
 }

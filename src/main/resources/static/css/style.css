@@ -10,6 +10,10 @@ header {
 	background-color:#dddddd;
 }
 
+.contents {
+	height:400px;
+}
+
 .user-box {
 	width:400px;
 }

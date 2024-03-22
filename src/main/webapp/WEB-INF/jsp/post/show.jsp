@@ -5,37 +5,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메모 게시판</title>
+<title>메모 보기</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link rel="stylesheet" href="/static/css/style.css" type="text/css">
 </head>
 <body>
-	
+
 	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
-		<section>
-			<h2>메모 리스트</h2>
-			
-			<table class="table text-center">
-				<thead>
-					<tr>
-						<th>No.</th>
-						<th>제목<th>
-						<th>시</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>4</td>
-						<td>중요한 메모</td>
-						<td>2025-01-04 12:00:00</td>
-					</tr>
-				</tbody>
+		<section class="contents d-flex justify-content-center align-items-center">
+			<div>
+				<h1>메모 보기</h1>
+				
+				<label>제목 : </label><input type="text" placeholder="제목을 입력하세요." class="form-control">
+				<textarea></textarea>
+				
+				<input type="file">
+				
+				<div class="d-flex justify-content-center align-items-center">
+					<button type="button" class="btn btn-block text-white">목록으로</button>
+					<button type="button" class="btn btn-block text-white">삭제</button>
+					<button type="button" class="btn btn-block text-white">수정</button>
+				</div>
+
+			</div>
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>
+	
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
 </body>
 </html>
