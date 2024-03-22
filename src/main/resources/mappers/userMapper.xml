@@ -26,7 +26,7 @@
 	<select id="selectUserByLoginIdAndPassword" parameterType="map" resultType="com.syj.memo.user.domain.User">
 		SELECT
 			`id`
-			, loginId`
+			, `loginId`
 			, `password`
 			, `name`
 			, `email`
@@ -38,5 +38,9 @@
 		  	`loginId` = #{loginId}
 		  	AND `password` = #{password}
 	</select>
+	
+	<insert id="insertPost">
+	
+	</insert>
 
 </mapper>

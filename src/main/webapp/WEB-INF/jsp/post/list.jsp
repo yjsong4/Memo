@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,24 +14,32 @@
 	
 	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
-		<section>
-			<h2>메모 리스트</h2>
+		<section class="contents d-flex justify-content-center">
+			<div>
+				<h2 class="text-center">메모 리스트</h2>
+				<table class="table text-center">
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>제목<th>
+							<th>시</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="post" items="${postList }">
+						<tr>
+							<td>${post.id }</td>
+							<td><a href="/post/detail-view?id=${post.id }">${post.title }</a></td>
+							<td><fmt:formatDate value="${post.createdAt }" pattern="yyyy-MM-dd HH:mm" /></td>
+						</tr>
+						</c:forEach>	
+					</tbody>
+				</table>
+			</div>
 			
-			<table class="table text-center">
-				<thead>
-					<tr>
-						<th>No.</th>
-						<th>제목<th>
-						<th>시</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>4</td>
-						<td>중요한 메모</td>
-						<td>2025-01-04 12:00:00</td>
-					</tr>
-				</tbody>
+			<div class="text-right">
+				<a href="/post/create-view" class="btn btn-secondary">글쓰기</a>
+			</div>
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>

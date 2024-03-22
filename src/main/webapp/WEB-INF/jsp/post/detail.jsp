@@ -13,21 +13,23 @@
 
 	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
-		<section class="contents d-flex justify-content-center align-items-center">
+		<section class="contents d-flex justify-content-center align-items-center my-5">
 			<div>
-				<h1>메모 보기</h1>
+				<h2 class="text-center mb-4">메모 보기</h2>
 				
-				<label>제목 : </label><input type="text" placeholder="제목을 입력하세요." class="form-control">
-				<textarea></textarea>
-				
-				<input type="file">
-				
-				<div class="d-flex justify-content-center align-items-center">
-					<button type="button" class="btn btn-block text-white">목록으로</button>
-					<button type="button" class="btn btn-block text-white">삭제</button>
-					<button type="button" class="btn btn-block text-white">수정</button>
+				<div class="d-flex">
+					<label class="col-1">제목 : </label>
+					<input type="text" placeholder="제목을 입력하세요." class="form-control" id="titleInput" value="${post.title }">
 				</div>
-
+				<textarea class="form-control" rows="7" id="contentsInput" value="${post.contents }"></textarea>
+				
+				<div class="my-3">
+					<div>
+						<a href="/post/list-view" class="btn btn-secondary">목록</a>
+						<button type="button" class="btn btn-danger" id="saveBtn">삭제</button>
+					</div>
+					<button type="button" class="btn btn-secondary" id="saveBtn">수정</button>
+				</div>	
 			</div>
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />

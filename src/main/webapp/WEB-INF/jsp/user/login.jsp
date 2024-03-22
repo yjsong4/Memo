@@ -48,9 +48,9 @@
 				, data:{"loginId":id, "password":password}
 				, success:function(data) {
 					if(data.result == "success") {
-						location.href = "post/list-view";
+						location.href = "/post/list-view";
 					} else {
-						alert("아이디와 비밀번호를 확인해 주세요.);
+						alert("아이디와 비밀번호를 확인해 주세요.");
 					}
 				}
 				, error:function() {
