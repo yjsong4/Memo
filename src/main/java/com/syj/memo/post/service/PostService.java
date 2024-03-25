@@ -19,7 +19,7 @@ public class PostService {
 		return postRepository.insertPost(userId, title, contents);
 	}
 	
-	public List<Post> getpostList(int userId) {
+	public List<Post> getPostList(int userId) {
 		
 		return postRepository.selectPostList(userId);
 	}

@@ -10,11 +10,15 @@ header {
 	background-color:#dddddd;
 }
 
-.user-box {
+.contents > .user-box {
 	width:400px;
 }
 
+.post-box {
+	width:800px;
+}
+
 footer {
-	height:60px;
+	height:70px;
 	background-color:#dddddd;
 }

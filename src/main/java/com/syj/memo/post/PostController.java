@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/post")
 @Controller
 public class PostController {
-
+	
 	@Autowired
 	private PostService postService;
 	
@@ -28,15 +28,16 @@ public class PostController {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		List<Post> postList = postService.getpostList(userId);
+		
+		List<Post> postList = postService.getPostList(userId);
 		
 		model.addAttribute("postList", postList);
 		
 		return "post/list";
 	}
-	
-	@GetMapping("/input-view")
-	public String memoInput() {
+
+	@GetMapping("/create-view")
+	public String inputMemo() {
 		
 		return "post/input";
 	}
@@ -48,9 +49,8 @@ public class PostController {
 		
 		Post post = postService.getPost(id);
 		
-		model.addAttribute("post" ,post);
+		model.addAttribute("post", post);
 		
 		return "post/detail";
 	}
-	
 }
