@@ -42,7 +42,6 @@
 	<select id="selectPost" parameterType="int"
 	resultType="com.syj.memo.post.domain.Post">
 	
-	</select>
 		SELECT
 			`id`
 			, `userId`
@@ -55,5 +54,6 @@
 		 	`post`
 		WHERE
 			`id` = #{id}
+	</select>
 </mapper>  
   

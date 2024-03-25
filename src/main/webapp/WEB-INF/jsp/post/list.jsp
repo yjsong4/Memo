@@ -22,7 +22,7 @@
 						<tr>
 							<th>No.</th>
 							<th>제목<th>
-							<th>시</th>
+							<th>시간</th>
 						</tr>
 					</thead>
 					<tbody>

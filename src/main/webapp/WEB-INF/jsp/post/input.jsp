@@ -22,12 +22,12 @@
 					<input type="text" placeholder="제목을 입력하세요." class="form-control" id="titleInput">
 				</div>
 				<textarea class="form-control" rows="7" id="contentsInput"></textarea>
+				<input type="file">
 				
-				<div class="my-3">
-					<input type="file">
+				<div class="d-flex justify-content-between my-3">
 					<a href="/post/list-view" class="btn btn-secondary">목록으로</a>
 					<button type="button" class="btn btn-secondary" id="saveBtn">저장</button>
-				</div>	
+				</div>
 			</div>
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
