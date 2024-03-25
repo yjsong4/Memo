@@ -21,9 +21,12 @@
 				</div>
 				
 				<textarea class="form-control mt-3" rows="7" id="contentsInput"></textarea>
-				<input type="file" class="mt-3">
+				<input type="file" class="mt-3" id="fileInput">
 				<div class="d-flex justify-content-between mt-3">
-					<a href="/post/list-view" class="btn btn-secondary">목록</a>
+					<div>
+						<a href="/post/list-view" class="btn btn-secondary">목록</a>
+						<a href="/post/delete-view" class="btn btn-danger">삭제</a>
+					</div>
 					<button type="button" class="btn btn-secondary" id="saveBtn">저장</button>
 				</div>
 			</div>
@@ -36,9 +39,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 <script>
 	$(document).ready(function() {
+		
 		$("#saveBtn").on("click", function() {
 			let title = $("#titleInput").val();
 			let contents = $("#contentsInput").val();
+			let file = $("#fileInput")[0].files[0];
 			
 			if(title == "") {
 				alert("제목을 입력하세요");
@@ -50,10 +55,18 @@
 				return ;
 			}
 			
+			let formData = new FormData();
+			formData.append("title", title);
+			formData.append("contents", contents);
+			formData.append("imageFile", file);
+			
 			$.ajax({
 				type:"post"
 				, url:"/post/create"
-				, data:{"title":title, "contents":contents}
+				, data:formData
+				, enctype:"multipart/form-data" // 파일 업로드 필수 옵션
+				, processData:false				// 파일 업로드 필수 옵션
+				, contentType:false				// 파일 업로드 필수 옵션
 				, success:function(data) {
 					if(data.result == "success") {
 						location.href = "/post/list-view";

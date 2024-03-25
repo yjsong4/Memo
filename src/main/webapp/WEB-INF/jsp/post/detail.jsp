@@ -22,6 +22,7 @@
 					<input type="text" placeholder="제목을 입력하세요." class="form-control" id="titleInput" value="${post.title }">
 				</div>
 				<textarea class="form-control" rows="7" id="contentsInput" value="${post.contents }"></textarea>
+				<img src="${post.imagePath }">
 				
 				<div class="my-3">
 					<div>
